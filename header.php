@@ -10,9 +10,10 @@ echo "<a href='/cart.php'><img src='resources/basket.svg' class='navigation-imag
 echo "</div>\n";
 echo "<div id='login-button'>\n";
 if ($_SESSION["login"]) {
-	echo "Hello, " . "<a href='profile.php'>" . $_SESSION["login"] . "</a>";
+	echo "Hello, " . "<a href='profile.php'>" . $_SESSION["login"] . "</a>. (<a href='user_creation.php?type=logout'>Log out</a>)";
+} else {
+	echo "<a href='/portal.php?type=login'>Login</a> | <a href='/portal.php?type=register'>Register</a>\n";
 }
-echo "<a href='/portal.php?type=login'>Login</a> | <a href='/portal.php?type=register'>Register</a>\n";
 echo "</div> \n";
 echo "</div>\n";
 ?>

@@ -8,12 +8,37 @@ define("ITEM_FIELD_COUNT", 3);
 /* ===== USER RELATED STUFF ===== */
 function get_users()
 {
-
+	$ret = null;
+	if (($fr = fopen(USER_FILE, "r")) != false) {
+		$ret[] = fgetcsv($fr);
+		fclose($fr);
+	}
+	return ($ret);
 }
 
 function set_user($login, $password)
 {
+	if (exists_user($login))
+		return (false);
+	if (($fr = fopen(USER_FILE, "a")) != false) {
+		fputcsv($fr, array($login, hash_pass($password)));
+		fclose($fr);
+		return (true);
+	}
+	return (false);
+}
 
+function exists_user($login) {
+	foreach (get_users() as $user) {
+		if ($user[0] === $login) {
+			return (true);
+		}
+	}
+	return (false);
+}
+
+function hash_pass($passwd) {
+	return (hash("whirlpool", $passwd));
 }
 
 /* ===== ITEM RELATED STUFF ===== */

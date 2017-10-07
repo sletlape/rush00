@@ -7,9 +7,7 @@
 </head>
 <body>
 <?php
-if (($fr = fopen("header.html", "r")) != false) {
 	include ("header.php");
-}
 ?>
 <table class=\"items-table\">
 	<tr>
