@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Rush00</title>
+	<title>Store - Rush00</title>
 </head>
 <body>
 <?php

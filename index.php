@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Index</title>
+	<title>Home - Rush00</title>
 	<link rel="stylesheet" href="/index.css">
 </head>
 <body>
@@ -20,21 +20,15 @@
 <?php
 include ("database_management.php");
 
-echo "<table id=\"category-table\"><tr>\n";
+echo "<table id=\"category-table\" cellspacing=\"1em\"><tr>\n";
 $x = 0;
 foreach (get_categories() as $category) {
 	if ($x > 3) {
 		echo "</tr>\n<tr>\n";
 	}
-	echo "<td class=\"category\"><img class=\"category-image\" src=\"" . $category[1] . "\"><br/>" . ucfirst($category[0]) . "</td>\n";
+	echo "<td class=\"category\"><a href=\"/store.php?category=" . $category[0] . "\"><img class=\"category-image\" src=\"" . $category[1] . "\"><br/><span class=\"category-name\">" . strtoupper($category[0]) . "</span></a></td>\n";
 }
 echo "</tr></table>\n";
-function write_category($category) {
-	echo "<div class=\"category\">";
-	echo "<img class=\"category-image\" src=\"" . $category[1] . "\">";
-	echo "<div class=\"category-name\">" . $category[0] . "</div>";
-	echo "</div>";
-}
 ?>
 </div>
 </body>

@@ -2,6 +2,8 @@ body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
+	background-color: #ACE7EF;
+	font-family: sans-serif;
 }
 #header {
 	position: relative;
@@ -13,7 +15,7 @@ body {
 }
 
 #main-content {
-	background-color: #ACE7EF;
+	margin: 1em;
 }
 
 #home-button {
@@ -41,10 +43,12 @@ body {
 
 #category-table {
 	width: 100%;
+	border-collapse: separate;
+	border-spacing: 1em;
 }
 
 #category-table td {
-	margin: 400px;
+	border-radius: 0.3em;
 }
 
 .navigation-image {
@@ -55,7 +59,23 @@ body {
 }
 
 .category {
+	position: relative;
 	text-align: center;
 	width: 25%;
 	background-color: white;
+	padding: 0.5em;
+}
+
+.category span {
+	margin-top: 0.5em;
+	position: absolute;
+	bottom: 0.5em;
+	color: #111111;
+}
+
+.category-image {
+	max-width: 512px;
+	max-height: 512px;
+	min-width: 256px;
+	min-height: 256px;
 }
