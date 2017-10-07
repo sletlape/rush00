@@ -2,24 +2,36 @@
 <html>
 <head>
 	<title>Store - Rush00</title>
+	<link rel="stylesheet" href="header.css">
+	<link rel="stylesheet" href="store.css">
 </head>
 <body>
 <?php
-include ("database_management.php");
-
-if (($categories = get_categories()) != false && ($items = get_items()) != false) {
-	echo "====== Categories =====<br />";
-	print_r($categories);
-	echo "<br />";
-
-	echo "====== Items ======<br />";
-	print_r($items);
-	echo "<br />";
-} else {
-	/* If either the items or category files could not load properly, the user should be able to go back */
-	echo "<p>Failed to load store.<br />";
-	echo "<a href=\"index.php\">Click here to redirect back to the home page.</a></p>";
+if (($fr = fopen("header.html", "r")) != false) {
+	include ("header.php");
 }
 ?>
+<table class=\"items-table\">
+	<tr>
+		<th>Item</th>
+		<th>Category</th>
+		<th>Price</th>
+	</tr>
+<?php
+include ("database_management.php");
+
+if ($_GET["category"]) {
+	foreach (get_items() as $item) {
+		if ($item[1] === $_GET["category"]) {
+			echo "<tr>\n";
+			echo "<td>" . $item[0] . "</td>\n";
+			echo "<td>" . $item[1] . "</td>\n";
+			echo "<td>" . $item[2] . "</td>\n";
+			echo "</tr>\n";
+		}
+	}
+}
+?>
+</table>
 </body>
 </html>

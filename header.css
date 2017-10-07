@@ -1,0 +1,51 @@
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background-color: #ACE7EF;
+	font-family: sans-serif;
+}
+
+#header {
+	position: relative;
+	z-index: 0;
+	margin: 0 0 0.5em 0;
+	padding: 0.5em;
+	background-color: #A6ACEC;
+	box-shadow: 0 0.3em 0.5em dimgray;
+}
+
+#home-button {
+	float: left;
+	text-align: center;
+}
+
+#login-button {
+	text-align: right;
+	padding: 0.8em;
+}
+
+#login-button a:link{
+	color: black;
+}
+
+#login-button a:hover {
+	text-decoration: none;
+}
+
+#login-button a:visited {
+	color: black;
+}
+
+#cart-button {
+	float: right;
+	text-align: center;
+	margin: 0 0 0 2em;
+}
+
+.navigation-image {
+	min-width: 3em;
+	min-height: 3em;
+	max-width: 3em;
+	max-height: 3em;
+}
